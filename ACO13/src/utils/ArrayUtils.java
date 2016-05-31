@@ -1,4 +1,4 @@
-package week1.day2;
+package utils;
 
 /**
  * Created by DeBasser on 22.05.2016.
