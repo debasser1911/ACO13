@@ -56,5 +56,5 @@ public class MyString {
         }
         return result;
     }
-    public boolean
+
 }

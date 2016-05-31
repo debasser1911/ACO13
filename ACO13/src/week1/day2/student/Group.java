@@ -27,6 +27,9 @@ public class Group {
     public boolean addStudent(Student student) {
         if (student == null) return false;
         if (counter >= students.length) return false;
+        if(counter > students.length){
+
+        }
         //todo check if present in group
         students[counter] = student;
         counter++;

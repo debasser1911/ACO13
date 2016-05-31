@@ -9,11 +9,22 @@ public class StudentTest {
     public static void main(String[] args) {
         Student st1 = new Student("Petya", new MyDate(1990, 10, 25), 'M');
         Student st2 = new Student("Vasia", new MyDate(1990, 10, 25), 'M');
+        GroupArratList gal = new GroupArratList();
 
-        Group group = new Group("ACO13");
-        group.addStudent(st1);
-        group.addStudent(st2);
+        gal.addStudent(st1);
+        gal.addStudent(st2);
 
-        group.showGroup();
+      gal.showGroup();
+       // gal.ifContains(st2);
+        //gal.ifContains(st1);
+        gal.removeStudent("Petya");
+gal.showGroup();
+
+
+
+/*        ArrayList stud = new ArrayList();
+        stud.add(st1);
+        System.out.println(stud.toString());*/
+
     }
 }
