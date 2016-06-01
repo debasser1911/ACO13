@@ -21,7 +21,7 @@ public class MyStringTest {
         System.out.println(mystring.concat(mystring3));
         System.out.println(mystring2.contains(mystring2));
         System.out.println(mystring2.indexOf('c'));*/
-        System.out.println(mystring2.substring(3, 8));
+        System.out.println(mystring3.substring(0, 5));
 
     }
 }

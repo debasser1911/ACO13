@@ -101,6 +101,9 @@ public class MyString {
     }
 
     public MyString substring(int beginIndex, int endIndex) {
+        if(beginIndex < 0 || endIndex < 0 || endIndex > this.length() || beginIndex > this.length()){
+            return null;
+        }
         int subLenght = endIndex - beginIndex + 1;
         char[] chars = new char[subLenght];
         System.arraycopy(this.characters, beginIndex, chars, 0, subLenght);
