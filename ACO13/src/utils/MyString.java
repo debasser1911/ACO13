@@ -99,7 +99,7 @@ public class MyString {
         }
         return new MyString(chars);
     }
-
+//ololo
     public MyString substring(int beginIndex, int endIndex) {
         if(beginIndex < 0 || endIndex < 0 || endIndex > this.length() || beginIndex > this.length()){
             return null;
