@@ -24,29 +24,29 @@ public class GroupArratList {
         }
     }
 
-    public void removeStudent(String name) {
-        String[] equalNames = new String[groupList.size()];
-        int index;
+
+    public boolean removeStudent(String name) {
+
         for (int i = 0; i < groupList.size(); i++) {
-            index = groupList.indexOf(groupList.get(i).getName().contains(name));
-                groupList.remove(index);
-            }
-/*            for (int j = 0; j < equalNames.length; j++) {
-                equalNames[j] = groupList.get(i).getName();
-                System.out.println(equalNames[i]);*/
-            }
-
-
-
-       public void removeStudent() {
-        String[] equalNames = new String[groupList.size()];
-        for (int i = 0; i < groupList.size(); i++) {
-
-            for (int j = 0; j < equalNames.length; j++) {
-                equalNames[j] = groupList.get(i).getName();
-                System.out.println(equalNames[i]);
+            if (groupList.get(i).getName().equals(name)) {
+                return groupList.remove(i);
             }
         }
+        return false;
+    }
+
+    public void removeStudent(Student student) {
+        int i = groupList.indexOf(student);
+        groupList.remove(i);
+
+    }
+
+
+    public void removeStudent(int index) {
+        if (index < 0) {
+            System.out.println("Incorrect index");
+        }
+        groupList.remove(index);
 
 
     }
