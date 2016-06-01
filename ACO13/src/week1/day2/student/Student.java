@@ -60,4 +60,20 @@ public class Student {
                 ", averageMark=" + averageMark +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Student student = (Student) o;
+
+        if (getGender() != student.getGender()) return false;
+        if (Double.compare(student.getAverageMark(), getAverageMark()) != 0) return false;
+        if (getName() != null ? !getName().equals(student.getName()) : student.getName() != null) return false;
+        return getBirthDay() != null ? getBirthDay().equals(student.getBirthDay()) : student.getBirthDay() == null;
+
+    }
+
 }
+

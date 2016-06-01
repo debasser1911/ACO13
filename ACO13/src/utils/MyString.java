@@ -7,7 +7,6 @@ public class MyString {
     private char[] characters;
 
     public MyString(String string) {
-
         characters = string == null ? null : string.toCharArray();
     }
 
@@ -36,6 +35,14 @@ public class MyString {
         System.arraycopy(strTwo.characters, 0, result.characters, this.length(), strTwo.length());
         return result;
     }
+//todo implement concat with string
+/*    public MyString concat(String string) {
+        int lastIndex = characters.length;
+        char[] temp = string.toCharArray();
+        System.arraycopy(temp, 0, this.characters, characters.length, temp.length);
+        MyString str = new MyString(this.characters);
+        return str;
+    }*/
 
     public MyString toLowerCase() {
         char[] ch = new char[characters.length];
@@ -57,4 +64,81 @@ public class MyString {
         return result;
     }
 
+    public boolean contains(MyString subString) {
+        if (subString == null || this.length() < subString.length()) {
+            return false;
+        }
+        boolean result = false;
+        for (int i = 0; i < this.length(); i++) {
+            if (this.characters[i] == subString.characters[0]) {
+                if ((this.length() - i) < subString.length()) {
+                    return false;
+                }
+                for (int k = 0; k < subString.length() - 1; k++) {
+                    if (this.characters[i + k] == subString.characters[k]) {
+                        result = true;
+                    } else {
+                        result = false;
+                        break;
+                    }
+                }
+            }
+        }
+        return result;
+    }
+
+    public boolean contains(char[] chars) {
+        return chars != null && contains(new MyString(chars));
+    }
+
+    public MyString substring(int beginIndex) {
+        int len = this.length() - beginIndex;
+        char[] chars = new char[len];
+        for (int i = 0; i < len || beginIndex <= len; i++, beginIndex++) {
+            chars[i] = this.characters[beginIndex];
+        }
+        return new MyString(chars);
+    }
+
+    public MyString substring(int beginIndex, int endIndex) {
+        int subLenght = endIndex - beginIndex + 1;
+        char[] chars = new char[subLenght];
+        System.arraycopy(this.characters, beginIndex, chars, 0, subLenght);
+        return new MyString(chars);
+    }
+
+    public MyString trim() {
+        int beginIndex = 0, endIndex = this.characters.length - 1;
+        while (this.characters[beginIndex] == ' ') {
+            beginIndex++;
+        }
+        while (this.characters[endIndex] == ' ') {
+            endIndex--;
+        }
+        return this.substring(beginIndex, endIndex);
+    }
+
+    public boolean equals(MyString string) {
+        if (this == string) {
+            return true;
+        }
+        if (string == null || this.length() != string.length()) {
+            return false;
+        }
+        for (int i = 0; i < this.length(); i++) {
+            if (this.characters[i] != string.characters[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public int indexOf(char ch) {
+        for (int i = 0; i < this.length(); i++) {
+            if (this.characters[i] == ch) {
+                return i;
+            }
+        }
+        return -1;
+    }
 }

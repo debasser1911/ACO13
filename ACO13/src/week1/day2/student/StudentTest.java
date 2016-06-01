@@ -9,7 +9,7 @@ public class StudentTest {
     public static void main(String[] args) {
         Student st1 = new Student("Petya", new MyDate(1990, 10, 25), 'M');
         Student st2 = new Student("Vasia", new MyDate(1990, 10, 25), 'M');
-        GroupArratList gal = new GroupArratList();
+        GroupArrayList gal = new GroupArrayList();
 
         gal.addStudent(st1);
         gal.addStudent(st2);
@@ -17,8 +17,8 @@ public class StudentTest {
       gal.showGroup();
        // gal.ifContains(st2);
         //gal.ifContains(st1);
-        gal.removeStudent(0);
-        gal.removeStudent(st2);
+gal.removeStudent("Vasia");
+        System.out.println();
 gal.showGroup();
 
 
