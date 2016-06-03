@@ -120,7 +120,7 @@ public class MyString {
         }
         return this.substring(beginIndex, endIndex);
     }
-
+    // todo watch video week 2
     public boolean equals(MyString string) {
         if (this == string) {
             return true;

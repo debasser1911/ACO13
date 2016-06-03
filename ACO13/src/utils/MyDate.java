@@ -22,4 +22,18 @@ public class MyDate {
     public String toString() {
         return  dayBirth + "." + monthBirth + "." + yearBirth;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        MyDate myDate = (MyDate) o;
+
+        if (yearBirth != myDate.yearBirth) return false;
+        if (monthBirth != myDate.monthBirth) return false;
+        return dayBirth == myDate.dayBirth;
+
+    }
+
 }

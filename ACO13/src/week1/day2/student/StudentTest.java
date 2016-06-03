@@ -17,7 +17,7 @@ public class StudentTest {
       gal.showGroup();
        // gal.ifContains(st2);
         //gal.ifContains(st1);
-gal.removeStudent("Vasia");
+gal.removeStudent(0);
         System.out.println();
 gal.showGroup();
 

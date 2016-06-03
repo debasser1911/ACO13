@@ -36,6 +36,7 @@ public class GroupArrayList {
     }
 
     //remove by object
+    //    todo doesn't work, chek only references
     public void removeStudent(Student student) {
         int i = groupList.indexOf(student);
         groupList.remove(i);
@@ -51,7 +52,7 @@ public class GroupArrayList {
 
 
     }
-
+    //    todo doesn't work, chek only references
     public boolean ifContains(Student student) {
         if (groupList.contains(student)) {
             System.out.println("Object present in list");
