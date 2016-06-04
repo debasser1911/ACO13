@@ -1,5 +1,7 @@
 package utils;
 
+import java.util.Date;
+
 /**
  * Created by DeBasser on 22.05.2016.
  */
@@ -14,13 +16,19 @@ public class MyDate {
         this.dayBirth = dayBirth;
     }
 
+    public int getYear() {
+        int year = this.yearBirth;
+        return year;
+
+    }
+
     public String asString() {
         return String.format("%d.%d.%d", dayBirth, monthBirth, yearBirth);
     }
 
     @Override
     public String toString() {
-        return  dayBirth + "." + monthBirth + "." + yearBirth;
+        return dayBirth + "." + monthBirth + "." + yearBirth;
     }
 
     @Override

@@ -2,10 +2,12 @@ package week1.day2.student;
 
 import utils.MyDate;
 
+import java.util.Comparator;
+
 /**
  * Created by DeBasser on 22.05.2016.
  */
-public class Student {
+public class Student implements StudentComparator {
     private String name;
 
     private MyDate birthDay;
@@ -75,5 +77,17 @@ public class Student {
 
     }
 
+/*    @Override
+    public int compareTo(Student compareStu) {
+        String compareName = compareStu.getName();
+
+        return 0;
+    }*/
+
+    @Override
+    public int compareTo(Student compareStu1, Student compareStu2) {
+        return this.getName().compareTo()
+    }
 }
+
 
