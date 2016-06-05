@@ -1,13 +1,15 @@
 package week1.day2.student;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * Created by DeBasser on 31.05.2016.
  */
-public class GroupArrayList implements List<Comparable> {
+public class GroupArrayList {
     private ArrayList<Student> groupList;
+    private Comparator<Student> comparator = new AgeComparator();
 
     public GroupArrayList() {
         this.groupList = new ArrayList<Student>();
@@ -69,17 +71,13 @@ public class GroupArrayList implements List<Comparable> {
         return false;
     }
 
-/*    public boolean groupSort (){
-        groupList.sort();
-    }*/
+    public void sort() {
+        Collections.sort(groupList, comparator);
+    }
 
-    public int compareTo(Student comparestu) {
-        int compareage=((Student)comparestu).getBirthDay().getYear();
-        /* For Ascending order*/
-        return this.getBirthDay().getYear()-compareage;
 
-        /* For Descending order do like this */
-        //return compareage-this.studentage;
+    public void setComparator(Comparator<Student> comparator) {
+        this.comparator = comparator;
     }
 }
 

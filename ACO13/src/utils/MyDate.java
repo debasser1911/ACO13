@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * Created by DeBasser on 22.05.2016.
  */
-public class MyDate {
+public class MyDate implements Comparable<MyDate>{
     private int yearBirth;
     private int monthBirth;
     private int dayBirth;
@@ -44,4 +44,8 @@ public class MyDate {
 
     }
 
+    @Override
+    public int compareTo(MyDate o) {
+        return this.yearBirth - yearBirth;
+    }
 }

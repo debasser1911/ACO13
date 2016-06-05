@@ -2,10 +2,6 @@ package week1.day2.student;
 
 import utils.MyDate;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-
 /**
  * Created by DeBasser on 22.05.2016.
  */
@@ -18,21 +14,20 @@ public class StudentTest {
         GroupArrayList gal = new GroupArrayList();
 
         gal.addStudent(st1);
-       gal.addStudent(st2);
-       gal.addStudent(st3);
-       gal.addStudent(st4);
+        gal.addStudent(st2);
+        gal.addStudent(st3);
+        gal.addStudent(st4);
 
-      gal.showGroup();
+        gal.showGroup();
         System.out.println(gal.ifContains(st2));
         System.out.println(gal.ifContains(st1));
 
         System.out.println();
-        gal.removeStudent(st1);
-        Collections.sort(gal);
-
+/*        gal.removeStudent(st1);*/
+        gal.sort();
 
         System.out.println();
-gal.showGroup();
+        gal.showGroup();
 
 
 
