@@ -10,6 +10,7 @@ public class ArrayUtils {
         }
         System.out.println();
     }
+
     public static void printArray(String[] array) {
         for (int i = 0; i < array.length; i++) {
             System.out.println(array[i] + " ");
@@ -17,4 +18,11 @@ public class ArrayUtils {
         System.out.println();
     }
 
+    public static int[] createArray(int size) {
+        int[] array = new int[size];
+        for (int i = 0; i < size; i++) {
+            array[i] = (int) (Math.random() * 1_000_000);
+        }
+        return array;
+    }
 }

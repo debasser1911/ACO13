@@ -29,7 +29,7 @@ CoffeeMachine coffeeMachine;
         System.out.println("Making drink");
         coffeeMachine.setCurrentState(coffeeMachine.getInProcess());
         try {
-            Thread.sleep(5000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
