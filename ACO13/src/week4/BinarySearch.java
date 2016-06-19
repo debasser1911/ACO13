@@ -1,6 +1,7 @@
 package week4;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by DeBasser on 18.06.2016.
@@ -44,5 +45,22 @@ public class BinarySearch {
         }
         return false;
     }
-}
 
+    private static boolean binarySearch(List<Comparable> list, Object object) {
+        int start = 0;
+        int end = list.size() - 1;
+        while (start != end) {
+            int middle = start + (end - start) / 2;
+            if (list.get(middle).compareTo(object) < 0) {
+                start = middle + 1;
+
+            } else if (list.get(middle).compareTo(object) > 0) {
+                end = middle - 1;
+            } else {
+                return true;
+            }
+
+        }
+        return false;
+    }
+}

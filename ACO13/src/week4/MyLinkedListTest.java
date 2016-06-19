@@ -15,14 +15,29 @@ public class MyLinkedListTest {
         int expected = 1;
         int actual = list.size();
         boolean result = actual == expected;
+
         System.out.printf("Method add, result %s, actual -%d", result, actual, expected);
 
 
         list.get(15);
+        list.add(20);
 
-        int expected2 = 5;
-        int actual2 = (Integer) list.get(3);
+        for (Object o : list) {
+            System.out.println(o);
+
+        }
+
+        expected = 5;
+        actual = (Integer) list.get(0);
         result = actual == expected;
+
+        System.out.printf("Method add, result %s, actual -%d", result, actual, expected);
+
+
+        expected = 5;
+        actual = (Integer) list.remove(0);
+        result = actual == expected;
+
         System.out.printf("Method add, result %s, actual -%d", result, actual, expected);
     }
 
