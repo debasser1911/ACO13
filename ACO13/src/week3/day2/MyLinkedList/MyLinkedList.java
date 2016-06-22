@@ -238,10 +238,10 @@ public class MyLinkedList<T> implements List<T> {
 
         Node<T> iterator;
 
-        public MyIterator() {
+/*        public MyIterator() {
             iterator = new Node<T>();
             iterator.next = head;
-        }
+        }*/
 
         @Override
         public boolean hasNext() {
@@ -252,6 +252,11 @@ public class MyLinkedList<T> implements List<T> {
         public T next() {
             iterator = iterator.next;
             return iterator.value;
+        }
+
+        @Override
+        public void remove() {
+
         }
     }
 }
