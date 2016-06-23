@@ -1,5 +1,7 @@
 package utils;
 
+import java.util.Arrays;
+
 /**
  * Created by istomina on 31.05.2016.
  */
@@ -7,11 +9,11 @@ public class MyString {
     private char[] characters;
 
     public MyString(String string) {
-        characters = string == null ? null : string.toCharArray();
+        characters = string != null ? string.toCharArray() : new char[0];
     }
 
     public MyString(char[] chars) {
-        characters = chars == null ? null : chars;
+        characters = chars != null ? Arrays.copyOf(chars, chars.length) : new char[0];
     }
 
     @Override
@@ -92,16 +94,17 @@ public class MyString {
     }
 
     public MyString substring(int beginIndex) {
-        int len = this.length() - beginIndex;
-        char[] chars = new char[len];
-        for (int i = 0; i < len || beginIndex <= len; i++, beginIndex++) {
-            chars[i] = this.characters[beginIndex];
+        if (beginIndex > characters.length || beginIndex < 0) return null;
+        char[] chars = new char[this.length() - beginIndex];
+        for (int i = 0; beginIndex < this.length(); beginIndex++) {
+            chars[i++] = this.characters[beginIndex];
         }
         return new MyString(chars);
     }
-//ololo
+
+    //ololo
     public MyString substring(int beginIndex, int endIndex) {
-        if(beginIndex < 0 || endIndex < 0 || endIndex > this.length() || beginIndex > this.length()){
+        if (beginIndex > endIndex || beginIndex == this.length() || endIndex == this.length()) {
             return null;
         }
         int subLenght = endIndex - beginIndex + 1;
@@ -120,20 +123,28 @@ public class MyString {
         }
         return this.substring(beginIndex, endIndex);
     }
-    // todo watch video week 2
-    public boolean equals(MyString string) {
-        if (this == string) {
-            return true;
-        }
-        if (string == null || this.length() != string.length()) {
-            return false;
-        }
-        for (int i = 0; i < this.length(); i++) {
-            if (this.characters[i] != string.characters[i]) {
+
+
+    public boolean equals(Object value) {
+
+        if (this == value) return true;
+
+        if (value == null) return false;
+
+
+        if (value.getClass() != MyString.class) return false;
+        MyString tmp = (MyString) value;
+        if (this.characters.length != tmp.characters.length) return false;
+
+        for (int i = 0; i < characters.length; i++) {
+
+            if (this.characters[i] != tmp.characters[i]) {
                 return false;
             }
         }
+
         return true;
+
     }
 
     public int indexOf(char ch) {
@@ -144,4 +155,5 @@ public class MyString {
         }
         return -1;
     }
+
 }
