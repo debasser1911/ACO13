@@ -9,6 +9,7 @@ public class MyStringTest {
     public static void main(String[] args) {
         char[] chars = {'a', 'b', 'c', 'd', 'e', 'f','j','f','s'};
         char[] chars2 = {'a', 'b', 'c', 'd', 'e', 'f', 'g'};
+        char[] chars4 = {'a', 'b', 'c', 'd', 'e', 'f', 'g'};
         char[] chars3 = new char[10];
         String str = "abcdefgjklmnopst";
         MyString mystring = new MyString(chars);
