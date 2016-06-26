@@ -1,6 +1,4 @@
-package week3.day2.state;
-
-import week1.day2.student.MarkComparator;
+package design_patterns.state;
 
 /**
  * Created by DeBasser on 05.06.2016.

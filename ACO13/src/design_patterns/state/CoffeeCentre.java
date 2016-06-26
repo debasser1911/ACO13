@@ -1,4 +1,4 @@
-package week3.day2.state;
+package design_patterns.state;
 
 import java.util.ArrayList;
 import java.util.List;

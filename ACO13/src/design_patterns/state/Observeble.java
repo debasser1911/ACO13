@@ -1,6 +1,4 @@
-package week3.day2.state;
-
-import java.util.Observer;
+package design_patterns.state;
 
 /**
  * Created by DeBasser on 05.06.2016.

@@ -1,4 +1,4 @@
-package week3.day2.MyLinkedList;
+package utils.MyLinkedList;
 
 /**
  * Created by DeBasser on 05.06.2016.

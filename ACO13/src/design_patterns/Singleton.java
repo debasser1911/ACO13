@@ -1,4 +1,4 @@
-package week3.day2;
+package design_patterns;
 
 /**
  * Created by DeBasser on 05.06.2016.

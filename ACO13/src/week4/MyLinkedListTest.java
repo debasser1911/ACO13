@@ -1,6 +1,6 @@
 package week4;
 
-import week3.day2.MyLinkedList.MyLinkedList;
+import utils.MyLinkedList.MyLinkedList;
 
 import java.util.List;
 

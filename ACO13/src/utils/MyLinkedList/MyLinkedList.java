@@ -1,4 +1,6 @@
-package week3.day2.MyLinkedList;
+package utils.MyLinkedList;
+
+import utils.MyIndexOutOfBoundException;
 
 import java.util.Collection;
 import java.util.Iterator;
@@ -16,7 +18,7 @@ public class MyLinkedList<T> implements List<T> {
 
     private Node findNode(int index) {
         if (index >= size || index < 0) {
-            System.exit(1);
+            throw new MyIndexOutOfBoundException(String.valueOf(index));
         }
         Node iter = head;
         for (int i = 1; i < index; i++) {
