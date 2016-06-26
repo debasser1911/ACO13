@@ -11,6 +11,7 @@ public class MyStringTest {
         char[] chars2 = {'a', 'b', 'c', 'd', 'e', 'f', 'g'};
         char[] chars4 = {'a', 'b', 'c', 'd', 'e', 'f', 'g'};
         char[] chars3 = new char[10];
+        char[] chars6 = new char[10];
         String str = "abcdefgjklmnopst";
         MyString mystring = new MyString(chars);
         MyString mystring2 = new MyString(chars2);
