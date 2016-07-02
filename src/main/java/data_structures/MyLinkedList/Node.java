@@ -1,4 +1,4 @@
-package utils.MyLinkedList;
+package data_structures.MyLinkedList;
 
 /**
  * Created by DeBasser on 05.06.2016.

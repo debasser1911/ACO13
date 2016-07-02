@@ -1,4 +1,4 @@
-package utils.MyLinkedList;
+package data_structures.MyLinkedList;
 
 import utils.MyIndexOutOfBoundException;
 

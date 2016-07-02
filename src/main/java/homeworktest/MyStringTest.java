@@ -1,6 +1,6 @@
 package homeworktest;
 
-import utils.MyString;
+import data_structures.MyString;
 
 /**
  * Created by istomina on 31.05.2016.
@@ -25,5 +25,5 @@ public class MyStringTest {
         System.out.println(mystring3.substring(0, 4));
 
     }
-    // или начальный индекс больше конечного или начальный индекс равен длине массива или конечный индекс равен длине массива
+
 }

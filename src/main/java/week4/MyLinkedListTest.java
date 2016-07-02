@@ -1,6 +1,6 @@
 package week4;
 
-import utils.MyLinkedList.MyLinkedList;
+import data_structures.MyLinkedList.MyLinkedList;
 
 import java.util.List;
 
