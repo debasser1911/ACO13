@@ -19,12 +19,12 @@ public class BinarySearchTree<E> implements Set<E>, Iterable<E> {
 
     @Override
     public int size() {
-        return 0;
+        return size();
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return size == 0;
     }
 
     @Override
@@ -49,6 +49,32 @@ public class BinarySearchTree<E> implements Set<E>, Iterable<E> {
 
     @Override
     public boolean add(E e) {
+        if(root == null){
+            root = new Node<>(e);
+            size++;
+            return true;
+
+        }
+
+        if(comparator != null){
+            // TODO: 02.07.16 compare with comparator
+        } else if(e != null) {
+            Comparable<? super E> eComparable = (Comparable<E>) e;
+
+            Node<E> iter = root;
+
+            int compareResult = eComparable.compareTo(root.value);
+
+            if(compareResult > 0){
+                iter = iter.rightChild;
+            } else if(compareResult < 0){
+                iter = iter.leftChild;
+            } else {
+                return false;
+            }
+
+
+        }
         return false;
     }
 
@@ -82,7 +108,15 @@ public class BinarySearchTree<E> implements Set<E>, Iterable<E> {
 
     }
 
-    private static class Node<E> {
+    private static class Node<T> {
+        T value;
+        Node<T> parent;
+        Node<T> leftChild;
+        Node<T> rightChild;
+
+        public Node(T value) {
+            this.value = value;
+        }
     }
 
     private class MyBinaryTreeIterator<E> implements Iterator<E> {
