@@ -2,6 +2,8 @@ package data_structures;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Test;
+
 import java.util.Set;
 
 /**
@@ -15,6 +17,11 @@ public class TestBinarySearchTree {
     public void setUP(){
         System.out.println("Before");
     }
+    @Test
+    public void test(){}
+
+
+
    @After
     public void clean(){
        System.out.println("After");
