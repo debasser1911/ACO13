@@ -1,6 +1,7 @@
-package homeworktest;
+package main.java.homeworktest;
 
-import data_structures.MyString;
+
+import main.java.data_structures.MyString;
 
 /**
  * Created by istomina on 31.05.2016.

@@ -1,6 +1,7 @@
-package data_structures.MyLinkedList;
+package main.java.data_structures.MyLinkedList;
 
-import utils.MyIndexOutOfBoundException;
+
+import main.java.utils.MyIndexOutOfBoundException;
 
 import java.util.Collection;
 import java.util.Iterator;
