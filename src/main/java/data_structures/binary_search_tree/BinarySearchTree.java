@@ -1,4 +1,4 @@
-package main.java.data_structures.binary_search_tree;
+package data_structures.binary_search_tree;
 
 import java.util.*;
 
@@ -19,7 +19,7 @@ public class BinarySearchTree<E> extends AbstractSet<E> implements NavigableSet<
 
     @Override
     public int size() {
-        return this.size();
+        return size;
     }
 
     @Override
@@ -347,6 +347,11 @@ public class BinarySearchTree<E> extends AbstractSet<E> implements NavigableSet<
         @Override
         public E next() {
             return null;
+        }
+
+        @Override
+        public void remove() {
+
         }
     }
 }
