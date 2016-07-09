@@ -1,4 +1,4 @@
-package main.java.homeworktest;
+package homeworktest;
 
 
 import main.java.data_structures.MyString;
