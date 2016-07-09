@@ -1,5 +1,5 @@
 *.class
-./idea
+ACO13.iml
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
@@ -10,3 +10,11 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+.idea/ACO13.iml
+.idea/compiler.xml
+.idea/copyright/
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+out/
