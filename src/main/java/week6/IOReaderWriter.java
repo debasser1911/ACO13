@@ -10,13 +10,13 @@ public class IOReaderWriter {
         InputStream is = new BufferedInputStream(new FileInputStream("/home/debasser/coding/ACO/ACO/week2.txt"));
 
         int readByte;
-        while((readByte = is.read()) != -1){
+        while ((readByte = is.read()) != -1) {
             System.out.print((char) readByte);
         }
         System.out.println(" ");
         Reader rd = new BufferedReader(new FileReader("/home/debasser/coding/ACO/ACO/week2.txt"));
         int readChar;
-        while((readChar = rd.read()) != -1){
+        while ((readChar = rd.read()) != -1) {
             System.out.print((char) readChar);
         }
 

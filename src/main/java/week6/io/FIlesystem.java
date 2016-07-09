@@ -17,12 +17,12 @@ public class FIlesystem {
         File newFile = new File(path);
         System.out.println(newFile.getAbsolutePath() + "$ ");
 
-        if(newFile.isDirectory()){
-        File[] files = newFile.listFiles();
+        if (newFile.isDirectory()) {
+            File[] files = newFile.listFiles();
 
-        for(File file1 : files) {
-            System.out.println(file1.getAbsolutePath());
-        }
+            for (File file1 : files) {
+                System.out.println(file1.getAbsolutePath());
+            }
         }
     }
 }

@@ -6,7 +6,7 @@ package design_patterns.state;
 public class NoMoneyState implements State {
     CoffeeMachine coffeeMachine;
 
-    public NoMoneyState(CoffeeMachine coffeeMachine){
+    public NoMoneyState(CoffeeMachine coffeeMachine) {
         this.coffeeMachine = coffeeMachine;
     }
 

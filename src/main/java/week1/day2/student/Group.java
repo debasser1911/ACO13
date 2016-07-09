@@ -27,7 +27,7 @@ public class Group {
     public boolean addStudent(Student student) {
         if (student == null) return false;
         if (counter >= students.length) return false;
-        if(counter > students.length){
+        if (counter > students.length) {
 
         }
         //todo check if present in group
@@ -41,10 +41,12 @@ public class Group {
             System.out.println(students[i].toString());
         }
     }
-    public Student search(String name){
+
+    public Student search(String name) {
         return null;
     }
-    public boolean deleteStudent (Student student){
+
+    public boolean deleteStudent(Student student) {
         return false;
     }
 }

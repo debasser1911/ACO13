@@ -10,11 +10,11 @@ public class Artist {
     protected String workPlace;
     protected int workCount;
     protected int drinkCount;
-    protected  double salary;
+    protected double salary;
     ArrayList<Artist> artists;
 
     public Artist() {
-        this.artists =  new ArrayList<Artist>();
+        this.artists = new ArrayList<Artist>();
     }
 
 

@@ -1,11 +1,9 @@
 package utils;
 
-import java.util.Date;
-
 /**
  * Created by DeBasser on 22.05.2016.
  */
-public class MyDate implements Comparable<MyDate>{
+public class MyDate implements Comparable<MyDate> {
     private int yearBirth;
     private int monthBirth;
     private int dayBirth;

@@ -2,7 +2,6 @@ package week5.day1;
 
 import utils.ArrayUtils;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 /**

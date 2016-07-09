@@ -10,7 +10,7 @@ public class Subzero extends Fighter {
 
     public Subzero(String name, int damage) {
         super(name, damage);
-        extraDamage = (int)(Math.random() * 20);
+        extraDamage = (int) (Math.random() * 20);
 
     }
 

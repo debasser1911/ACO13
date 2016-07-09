@@ -8,7 +8,7 @@ import main.java.data_structures.MyString;
  */
 public class MyStringTest {
     public static void main(String[] args) {
-        char[] chars = {'a', 'b', 'c', 'd', 'e', 'f','j','f','s'};
+        char[] chars = {'a', 'b', 'c', 'd', 'e', 'f', 'j', 'f', 's'};
         char[] chars2 = {'a', 'b', 'c', 'd', 'e', 'f', 'g'};
         char[] chars4 = {'a', 'b', 'c', 'd', 'e', 'f', 'g'};
         String str = "abcdefgjklmnopst";

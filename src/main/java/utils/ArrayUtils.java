@@ -26,12 +26,13 @@ public class ArrayUtils {
         return array;
     }
 
-    public static void selectSort(int[] array){
-        if(array == null || array.length <=1) return;;
-        for (int i = 0; i < array.length ; i++) {
+    public static void selectSort(int[] array) {
+        if (array == null || array.length <= 1) return;
+        ;
+        for (int i = 0; i < array.length; i++) {
             int idx = i;
             for (int j = i + 1; j < array.length; j++) {
-                if(array[j] < array[idx]){
+                if (array[j] < array[idx]) {
                     idx = j;
                 }
 
@@ -42,6 +43,7 @@ public class ArrayUtils {
 
         }
     }
+
     public static void isertSort(int[] array) {
     }
 /*    public static void bubbleSort(int[] array){
@@ -52,4 +54,4 @@ public class ArrayUtils {
                 if(array[j] > array[j + i]);
             }
         }*/
-    }
+}

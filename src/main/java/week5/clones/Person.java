@@ -32,14 +32,14 @@ public class Person implements Cloneable, Serializable {
 
     @Override
     public Object clone() throws CloneNotSupportedException {
-        return (Person)super.clone();
+        return (Person) super.clone();
     }
 
     @Override
     public String toString() {
         return
                 "name='" + name + '\'' +
-                ", age=" + age +
-                '}';
+                        ", age=" + age +
+                        '}';
     }
 }
