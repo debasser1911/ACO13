@@ -20,8 +20,8 @@ public class MyLinkedList<T> implements List<T> {
         if (index >= size || index < 0) {
             throw new MyIndexOutOfBoundException(String.valueOf(index));
         }
-        Node iter = head;
-        for (int i = 1; i < index; i++) {
+        Node<T> iter = head;
+        for (int i = 0; i < index; i++) {
             iter = iter.next;
         }
         return iter;
@@ -79,7 +79,8 @@ public class MyLinkedList<T> implements List<T> {
         tail = tail.next;
         size++;
         return true;
-    }
+        }
+
 
     @Override
     public boolean remove(Object o) {
