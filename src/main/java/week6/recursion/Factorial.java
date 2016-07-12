@@ -11,7 +11,7 @@ public class Factorial {
 
     private static int factorial(int number) {
         if (number <= 1) return 1;
-        int count = number * factorial(-1);
+        int count = number * factorial(number -1);
 
         return count;
     }

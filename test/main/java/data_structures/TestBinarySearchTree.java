@@ -1,5 +1,4 @@
-package main.java.data_structures;
-
+package data_structures;
 
 
 import data_structures.binary_search_tree.BinarySearchTree;

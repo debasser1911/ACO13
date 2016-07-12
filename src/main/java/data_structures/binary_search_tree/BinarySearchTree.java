@@ -3,9 +3,6 @@ package data_structures.binary_search_tree;
 
 import java.util.*;
 
-/**
- * Created by gorobec on 02.07.16.
- */
 public class BinarySearchTree<E> extends AbstractSet<E> implements NavigableSet<E>, Iterable<E> {
 
     private Node<E> root;
@@ -17,6 +14,21 @@ public class BinarySearchTree<E> extends AbstractSet<E> implements NavigableSet<
 
     public BinarySearchTree(Comparator<? super E> comparator) {
         this.comparator = comparator;
+    }
+
+    public void showTree() {
+        deepSearch(root);
+    }
+
+    private void deepSearch(Node<E> root) {
+        //exit condition
+        if(root == null) return;
+        //find lowest then root
+        deepSearch(root.leftChild);
+        // print lowest value
+        System.out.println(root.value);
+        deepSearch(root.rightChild);
+
     }
 
     @Override
@@ -158,11 +170,12 @@ public class BinarySearchTree<E> extends AbstractSet<E> implements NavigableSet<
     @Override
     public E first() {
         if (isEmpty()) throw new NoSuchElementException("size == 0");
-        return findLeft(root);
+        //todo refactor mothode
+        return (E) findLeft(root);
     }
 
-    private E findLeft(Node<E> iter) {
-        return iter.leftChild != null ? findLeft(iter.leftChild) : iter.value;
+    private Node<E> findLeft(Node<E> iter) {
+        return iter.leftChild != null ? findLeft(iter.leftChild) : iter;
     }
 
     @Override
@@ -369,15 +382,24 @@ public class BinarySearchTree<E> extends AbstractSet<E> implements NavigableSet<
      */
     private class MyBinaryTreeIterator<E> implements Iterator<E> {
         //        TODO
+        Node<E> iterator;
+
+/*        public MyBinaryTreeIterator (){
+            this.iterator = findLeft(root);
+        }*/
+
 
         @Override
         public boolean hasNext() {
-            return false;
+            return iterator != null;
         }
 
         @Override
         public E next() {
-            return null;
+            E forReturn = iterator.value;
+
+
+            return forReturn;
         }
     }
 }

@@ -9,7 +9,7 @@ import java.util.Comparator;
  */
 public class GroupArrayList {
     private ArrayList<Student> groupList;
-    private Comparator<Student> comparator = new AgeComparator();
+    private transient Comparator<Student> comparator = new AgeComparator();
 
     public GroupArrayList() {
         this.groupList = new ArrayList<Student>();
