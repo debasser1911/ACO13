@@ -1,7 +1,6 @@
-package main.java.data_structures.MyLinkedList;
+package data_structures.MyLinkedList;
 
-
-import main.java.utils.MyIndexOutOfBoundException;
+import utils.MyIndexOutOfBoundException;
 
 import java.util.Collection;
 import java.util.Iterator;
@@ -31,6 +30,12 @@ public class MyLinkedList<T> implements List<T> {
     public MyLinkedList() {
     }
 
+    private void invalidIndex(int index) {
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException("Invalid index input!!!");
+        }
+    }
+
     @Override
     public int size() {
         return size;
@@ -43,7 +48,10 @@ public class MyLinkedList<T> implements List<T> {
 
     @Override
     public boolean contains(Object o) {
-        return false;
+        Node<T> iter = head;
+        while (iter != null && !o.equals(iter.value)) iter = iter.next;
+        return (iter != null);
+
     }
 
     @Override
@@ -53,7 +61,11 @@ public class MyLinkedList<T> implements List<T> {
 
     @Override
     public Object[] toArray() {
-        return new Object[0];
+        T[] result = (T[]) new Object[size];
+        int i = 0;
+        for (Node<T> iter = head; iter != null; iter = iter.next)
+            result[i++] = iter.value;
+        return result;
     }
 
     @Override
@@ -71,11 +83,22 @@ public class MyLinkedList<T> implements List<T> {
 
     @Override
     public boolean remove(Object o) {
-        return false;
+        int index = indexOf(o);
+        if (index != -1) {
+            remove(index);
+            return true;
+        } else return false;
     }
+
 
     @Override
     public boolean addAll(Collection c) {
+        int addsize = c.size();
+        for (Object o : c) {
+            add(o);
+            size = size + addsize;
+            return true;
+        }
         return false;
     }
 
@@ -86,7 +109,18 @@ public class MyLinkedList<T> implements List<T> {
 
     @Override
     public void clear() {
-
+        if (isEmpty()) {
+            return;
+        }
+        for (Node<T> iter = head; iter != null; ) {
+            Node<T> next = iter.next;
+            iter.value = null;
+            iter.next = null;
+            iter.previous = null;
+            iter = next;
+        }
+        head = tail = null;
+        size = 0;
     }
 
     @Override
@@ -116,7 +150,35 @@ public class MyLinkedList<T> implements List<T> {
 
     @Override
     public void add(int index, Object element) {
-
+        invalidIndex(index);
+        Node<T> newNode = new Node<>((T) element);
+        // inserting in an empty list
+        if (isEmpty()) {
+            head = newNode;
+            tail = newNode;
+        }
+        // inserting at the beginning list != empty
+        else if (index == 0) {
+            newNode.next = head;
+            head.previous = newNode;
+            head = newNode;
+        }
+        // inserting at the end (list != empty)
+        else if (index == size()) {
+            newNode.previous = tail;
+            tail.next = newNode;
+            tail = newNode;
+        }
+        // inserting somewhere in the middle
+        else {
+            if (index >= 1) ;
+            Node<T> nodeBefore = findNode(index - 1);
+            newNode.next = nodeBefore.next;
+            newNode.next.previous = newNode;
+            newNode.previous = nodeBefore;
+            nodeBefore.next = newNode;
+        }
+        size++;
 
     }
 
@@ -171,7 +233,20 @@ public class MyLinkedList<T> implements List<T> {
 
     @Override
     public int lastIndexOf(Object o) {
-        return 0;
+        int index = size;
+        Node<T> iter;
+        if (o == null) {
+            for (iter = tail; iter != null; iter = iter.previous) {
+                index--;
+                if (iter.value == null) return index;
+            }
+        } else {
+            for (iter = tail; iter != null; iter = iter.previous) {
+                index--;
+                if (o.equals(iter.value)) return index;
+            }
+        }
+        return -1;
     }
 
     @Override
@@ -188,22 +263,49 @@ public class MyLinkedList<T> implements List<T> {
 
     @Override
     public List subList(int fromIndex, int toIndex) {
-        return null;
+        if (fromIndex < 0 || toIndex > size() || fromIndex > toIndex) {
+            throw new IndexOutOfBoundsException("Invalid index input!!!");
+        }
+        MyLinkedList<T> newLinkedList = new MyLinkedList<>();
+        int i = 0;
+        for (Node<T> iter = head; iter != null && i <= toIndex; iter = iter.next) {
+            if (i >= fromIndex && i <= toIndex) {
+                newLinkedList.add(iter.value);
+            }
+            i++;
+        }
+        return newLinkedList;
     }
 
     @Override
     public boolean retainAll(Collection c) {
-        return false;
+        MyLinkedList tmpList = new MyLinkedList();
+        for (Object o : this) {
+            if (!c.contains(o)) tmpList.add(o);
+        }
+        return this.removeAll(tmpList);
     }
 
     @Override
     public boolean removeAll(Collection c) {
-        return false;
+        if (c.isEmpty()) return false;
+        boolean change = false;
+        for (Object o : c) {
+            while (contains(o)) {
+                remove(o);
+                change = true;
+            }
+        }
+        return change;
     }
+
 
     @Override
     public boolean containsAll(Collection c) {
-        return false;
+        for (Object o : c) {
+            if (!this.contains(o)) return false;
+        }
+        return true;
     }
 
     @Override

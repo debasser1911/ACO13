@@ -1,5 +1,4 @@
-package data_structures;
-
+package main.java.data_structures;
 
 import data_structures.binary_search_tree.BinarySearchTree;
 import org.junit.After;

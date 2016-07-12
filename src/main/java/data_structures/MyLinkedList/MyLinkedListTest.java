@@ -1,6 +1,4 @@
-package main.java.week4;
-
-import main.java.data_structures.MyLinkedList.MyLinkedList;
+package data_structures.MyLinkedList;
 
 import java.util.List;
 

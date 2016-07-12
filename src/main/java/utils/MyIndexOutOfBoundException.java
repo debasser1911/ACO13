@@ -1,4 +1,4 @@
-package main.java.utils;
+package utils;
 
 /**
  * Created by DeBasser on 25.06.2016.
