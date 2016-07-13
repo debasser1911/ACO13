@@ -9,7 +9,7 @@ public class RecursionIntro {
     }
 
     private static void a(int i) {
-        if(i == 0) return;
+        if (i == 0) return;
         a(i - 1);
         System.out.println(i);
     }

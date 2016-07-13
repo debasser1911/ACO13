@@ -20,6 +20,6 @@ public class Man extends Person implements Serializable {
 
     @Override
     public Man clone() throws CloneNotSupportedException {
-        return (Man)super.clone();
+        return (Man) super.clone();
     }
 }

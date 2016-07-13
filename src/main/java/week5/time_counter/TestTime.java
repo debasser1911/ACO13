@@ -2,8 +2,6 @@ package week5.time_counter;
 
 import utils.ArrayUtils;
 
-import java.sql.Time;
-
 /**
  * Created by DeBasser on 25.06.2016.
  */

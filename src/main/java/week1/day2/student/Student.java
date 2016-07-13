@@ -2,12 +2,12 @@ package week1.day2.student;
 
 import utils.MyDate;
 
-import java.util.Comparator;
+import java.io.Serializable;
 
 /**
  * Created by DeBasser on 22.05.2016.
  */
-public class Student implements Comparable {
+public class Student implements Comparable, Serializable {
     private String name;
 
     private MyDate birthDay;
@@ -81,6 +81,14 @@ public class Student implements Comparable {
     @Override
     public int compareTo(Object o) {
         return 0;
+    }
+
+
+    @Override
+    public int hashCode() {
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + (birthDay != null ? birthDay.hashCode() : 0);
+        return result;
     }
 }
 

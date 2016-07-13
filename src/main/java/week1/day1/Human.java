@@ -1,18 +1,18 @@
 package week1.day1;
 
 public class Human {
-   public String name;
-   public int age;
-   public String sex;
-   public int height;
-   public int weight;
+    public String name;
+    public int age;
+    public String sex;
+    public int height;
+    public int weight;
 
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
-        if(name == null) return;
+        if (name == null) return;
         this.name = name;
     }
 
@@ -67,8 +67,8 @@ public class Human {
                 '}';
     }
 
-    public String asString(){
-        return String.format("Name - %s, age - %d, height - -%d" , name, age, height);
+    public String asString() {
+        return String.format("Name - %s, age - %d, height - -%d", name, age, height);
 
     }
 }

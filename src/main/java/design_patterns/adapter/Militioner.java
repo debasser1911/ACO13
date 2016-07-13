@@ -5,7 +5,7 @@ package design_patterns.adapter;
  */
 public class Militioner {
 
-    public void takeBribes(){
+    public void takeBribes() {
         System.out.println("I'm taking bribes");
     }
 }

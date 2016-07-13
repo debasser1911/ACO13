@@ -5,7 +5,9 @@ package design_patterns.state;
  */
 public interface Observeble {
     void addObserver(MyObserver observer);
+
     void removeObserver(MyObserver observer);
+
     void notifyObserver();
 
 }

@@ -9,8 +9,7 @@ public class CircusManager extends Artist {
 
 
     //todo implement method
-    public boolean doWork(){
-
+    public boolean doWork() {
 
 
         return true;

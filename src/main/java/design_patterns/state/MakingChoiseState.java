@@ -4,9 +4,9 @@ package design_patterns.state;
  * Created by DeBasser on 05.06.2016.
  */
 public class MakingChoiseState implements State {
-CoffeeMachine coffeeMachine;
+    CoffeeMachine coffeeMachine;
 
-    public MakingChoiseState(CoffeeMachine coffeeMachine){
+    public MakingChoiseState(CoffeeMachine coffeeMachine) {
         this.coffeeMachine = coffeeMachine;
     }
 

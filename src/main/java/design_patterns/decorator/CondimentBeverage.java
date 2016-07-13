@@ -9,10 +9,11 @@ public class CondimentBeverage extends Beverage {
     protected String description;
     protected double cost;
 
-    public CondimentBeverage(Beverage beverage){
+    public CondimentBeverage(Beverage beverage) {
         this.beverage = beverage;
     }
-    public String getDescription(){
+
+    public String getDescription() {
         return beverage.decription + description;
     }
 

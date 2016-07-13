@@ -15,11 +15,11 @@ public class Arena {
     public void startFight() {
 
         while (first.health > 0
-                && second.health > 0){
+                && second.health > 0) {
 
             System.out.printf("Fighter - %s hit, %s health - ", first.asString(), second.asString());
             first.hit(second);
-            if(second.health <= 0) {
+            if (second.health <= 0) {
                 System.out.println(first.asString() + " win!");
 
                 break;
@@ -27,7 +27,7 @@ public class Arena {
             System.out.printf("Fighter - %s hit, - %s health - ", second.asString(), first.asString());
             second.hit(first);
 
-            if(first.health <= 0){
+            if (first.health <= 0) {
                 System.out.println(second.asString() + " win!");
             }
 
