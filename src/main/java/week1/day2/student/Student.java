@@ -1,13 +1,15 @@
 package week1.day2.student;
 
+
+
 import utils.MyDate;
 
-import java.io.Serializable;
+import java.util.Comparator;
 
 /**
  * Created by DeBasser on 22.05.2016.
  */
-public class Student implements Comparable, Serializable {
+public class Student implements Comparable, Comparator {
     private String name;
 
     private MyDate birthDay;
@@ -64,6 +66,11 @@ public class Student implements Comparable, Serializable {
     }
 
     @Override
+    public int compare(Object o1, Object o2) {
+        return 0;
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -81,14 +88,6 @@ public class Student implements Comparable, Serializable {
     @Override
     public int compareTo(Object o) {
         return 0;
-    }
-
-
-    @Override
-    public int hashCode() {
-        int result = name != null ? name.hashCode() : 0;
-        result = 31 * result + (birthDay != null ? birthDay.hashCode() : 0);
-        return result;
     }
 }
 

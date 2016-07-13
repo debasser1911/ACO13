@@ -1,11 +1,9 @@
 package utils;
 
-import java.io.Serializable;
-
 /**
  * Created by DeBasser on 22.05.2016.
  */
-public class MyDate implements Comparable<MyDate>, Serializable {
+public class MyDate implements Comparable<MyDate>{
     private int yearBirth;
     private int monthBirth;
     private int dayBirth;
@@ -42,16 +40,6 @@ public class MyDate implements Comparable<MyDate>, Serializable {
         if (monthBirth != myDate.monthBirth) return false;
         return dayBirth == myDate.dayBirth;
 
-    }
-
-    @Override
-    public int hashCode() {
-        int result = 17;
-        result = 31 * result + yearBirth;
-        result = 31 * result + monthBirth;
-        result = 31 * result + dayBirth;
-
-        return result;
     }
 
     @Override

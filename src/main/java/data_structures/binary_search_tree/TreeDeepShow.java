@@ -14,7 +14,7 @@ public class TreeDeepShow {
         tree.add("L");
         tree.add("E");
 
-        tree.showTree();
+        /*tree.showTree();*/
     }
 
 }

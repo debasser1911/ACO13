@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * Created by debasser on 02.07.16.
  */
-public class BinarySearchTree<E> extends AbstractSet<E> implements NavigableSet<E>, Set<E>, Iterable<E> {
+public class BinarySearchTree<E> extends AbstractSet<E> implements NavigableSet<E>, Iterable<E> {
     private Node<E> root;
     private int size;
     private Comparator<? super E> comparator;
