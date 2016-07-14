@@ -94,12 +94,7 @@ public class MyString {
     }
 
     public MyString substring(int beginIndex) {
-        if (beginIndex > characters.length || beginIndex < 0) return null;
-        char[] chars = new char[this.length() - beginIndex];
-        for (int i = 0; beginIndex < this.length(); beginIndex++) {
-            chars[i++] = this.characters[beginIndex];
-        }
-        return new MyString(chars);
+        return substring(beginIndex, this.length() - 1);
     }
 
     //ololo
