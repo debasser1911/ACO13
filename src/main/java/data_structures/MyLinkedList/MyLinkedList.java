@@ -79,7 +79,7 @@ public class MyLinkedList<T> implements List<T> {
         tail = tail.next;
         size++;
         return true;
-        }
+    }
 
 
     @Override
@@ -94,13 +94,11 @@ public class MyLinkedList<T> implements List<T> {
 
     @Override
     public boolean addAll(Collection c) {
-        int addsize = c.size();
+        boolean result = false;
         for (Object o : c) {
-            add(o);
-            size = size + addsize;
-            return true;
+            result = add(o);
         }
-        return false;
+        return result;
     }
 
     @Override
@@ -280,11 +278,7 @@ public class MyLinkedList<T> implements List<T> {
 
     @Override
     public boolean retainAll(Collection c) {
-        MyLinkedList tmpList = new MyLinkedList();
-        for (Object o : this) {
-            if (!c.contains(o)) tmpList.add(o);
-        }
-        return this.removeAll(tmpList);
+        return false;
     }
 
     @Override
@@ -303,10 +297,8 @@ public class MyLinkedList<T> implements List<T> {
 
     @Override
     public boolean containsAll(Collection c) {
-        for (Object o : c) {
-            if (!this.contains(o)) return false;
-        }
-        return true;
+
+        return false;
     }
 
     @Override
@@ -340,14 +332,14 @@ public class MyLinkedList<T> implements List<T> {
         }
     }
 
-    private class MyIterator<T> implements Iterator<T> {
+    private class MyIterator implements Iterator {
 
         Node<T> iterator;
 
-/*        public MyIterator() {
-            iterator = new Node<T>();
+        public MyIterator() {
+            iterator = new Node<>();
             iterator.next = head;
-        }*/
+        }
 
         @Override
         public boolean hasNext() {
