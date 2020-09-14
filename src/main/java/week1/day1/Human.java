@@ -1,4 +1,5 @@
-package week1.day1;
+package main.java.week1.day1;
+
 
 public class Human {
     public String name;

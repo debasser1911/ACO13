@@ -17,5 +17,6 @@ hs_err_pid*
 .idea/modules.xml
 .idea/vcs.xml
 .idea/workspace.xml
-out/
-src/main/java/week7/
+out
+.idea
+

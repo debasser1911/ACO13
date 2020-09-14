@@ -1,4 +1,4 @@
-package homework.Circus;
+package main.java.Circus;
 
 import java.util.ArrayList;
 

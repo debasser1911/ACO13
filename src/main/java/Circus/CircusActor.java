@@ -1,4 +1,4 @@
-package homework.Circus;
+package main.java.Circus;
 
 /**
  * Created by istomina on 22.06.2016.
